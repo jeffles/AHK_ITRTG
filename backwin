@@ -1,0 +1,247 @@
+; Common Header Stuff
+#SingleInstance, Force
+SetTitleMatchMode, 2 ;<-- so you can use partial window titles
+Coordmode, Mouse, Screen ;<-- so you can mouse the whole screen
+CoordMode, Pixel, Screen ;<-- pixel id the whole screen
+SetKeyDelay 30,50 ;<-- set up basic key timing
+
+; Ideas, change the fights to be an array of objects that it loops through
+; change the xy or reset and fight to be variables that you move the 
+; mouse to at the start of execution. (Or just one, and the other is calculated from it)
+
+YReset = 0
+4Reset = 0
+3Reset = 0
+2Reset = 0
+1Reset = 0
+MReset = 0
+NReset = 0
+BReset = 0
+KReset = 0
+JReset = 0
+HReset = 0
+GReset = 0
+IReset = 0
+UReset = 0
+ZReset = 0
+ClickReset = 0
+VReset = 0
+CReset = 0
+XReset = 0
+5Reset = 0
+FReset = 0
+DReset = 0
+SReset = 0
+RReset = 0
+
+RestartFight = 0
+
+
+StartTime := A_TickCount
+Sleep, 1000
+ElapsedTime := Floor((A_TickCount - StartTime) /1000)
+;MsgBox,  %ElapsedTime% seconds have elapsed.
+
+
+; get the instance ids
+WinGet, game_id, ID, Play 
+WinMaximize, ahk_id %game_id%
+; MsgBox, The active window's ID is "%game_id%".
+;SetKeyDelay, 1000
+
+;Sleep, 10000
+;MouseGetPos, xpos, ypos 
+;MsgBox, The cursor is at X%xpos% Y%ypos%. 
+
+;does not matter which one is on top the numbers gets sent to both
+loop
+{   
+	YReset -= 1
+	4Reset -= 1
+	3Reset -= 1
+	2Reset -= 1
+	1Reset -= 1
+	MReset -= 1
+	NReset -= 1
+	BReset -= 1
+	KReset -= 1
+	JReset -= 1
+	HReset -= 1
+	GReset -= 1
+	IReset -= 1
+	UReset -= 1
+	ZReset -= 1
+	ClickReset -= 1
+	VReset -= 1
+	CReset -= 1
+	XReset -= 1
+	5Reset -= 1
+	FReset -= 1
+	DReset -= 1
+	SReset -= 1
+	RReset -= 1
+	
+
+	RestartFight -= 1
+	if GetKeyState("F2", "P")
+	{
+		break  ; Break out of the loop.
+	}
+	if RestartFight <= 0 
+	{
+	  Click 829, 806
+      Sleep, 1000
+	  Click 681, 804
+	  RestartFight = 700
+	  continue
+	}	
+	if YReset <= 0 
+	{
+	  Send, Y
+	  YReset = 40
+	  continue
+	}		
+	if 4Reset <= 0 
+	{
+	  Send, {Numpad4}
+	  4Reset = 25
+	  continue
+	}
+	if 3Reset <= 0 
+	{
+	  Send, {Numpad3}
+	  3Reset = 25
+	  continue
+	}
+	if 2Reset <= 0 
+	{
+	  Send, {Numpad2}
+	  2Reset = 12
+	  continue
+	}
+	if 1Reset <= 0 
+	{
+	  Send, {Numpad1}
+	  1Reset = 12
+	  continue
+	}
+	if MReset <= 0 
+	{
+	  Send, M
+	  MReset = 45
+	  continue
+	}
+	if NReset <= 0 
+	{
+	  Send, N
+	  NReset = 7
+	  continue
+	}
+	if BReset <= 0 
+	{
+	  Send, B
+	  BReset = 12
+	  continue
+	}
+	if KReset <= 0 
+	{
+	  Send, K
+	  KReset = 23
+	  continue
+	}
+	if JReset <= 0 
+	{
+	  Send, J
+	  JReset = 23
+	  continue
+	}
+	if HReset <= 0 
+	{
+	  Send, H
+	  HReset = 23
+	  continue
+	}	
+	if GReset <= 0 
+	{
+	  Send, G
+	  GReset = 23
+	  continue
+	}		
+	if IReset <= 0 
+	{
+	  Send, I
+	  IReset = 15
+	  continue
+	}	
+	if UReset <= 0 
+	{
+	  Send, U
+	  UReset = 12
+	  continue
+	}
+	if ZReset <= 0 
+	{
+	  Send, Z
+	  ZReset = 31
+	  continue
+	}	
+	if ClickReset<= 0
+	{
+	  Send, LButton
+	  ClickReset = 12
+	  continue
+	}
+	if VReset <= 0 	
+	{
+	  Send, V
+	  VReset = 40
+	  continue
+	}	
+	if CReset <= 0 
+	{
+	  Send, C
+	  CReset = 4
+	  continue
+	}	
+	if XReset <= 0 
+	{
+	  Send, X
+	  XReset = 3
+	  continue
+	}	
+	if 5Reset <= 0 
+	{
+	  Send, {Numpad5}
+	  5Reset = 15
+	  continue
+	}	
+	if FReset <= 0 
+	{
+	  Send, F
+	  FReset = 21
+	  continue
+	}
+	if DReset <= 0 
+	{
+	  Send, D
+	  DReset = 15
+	  continue
+	}	
+	if SReset <= 0 
+	{
+	  Send, S
+	  SReset = 8
+	  continue
+	}	
+	if RReset <= 0 
+	{
+	  Send, R
+	  BReset = 3
+	  continue
+	}	
+
+	Send, Q
+}
+ElapsedTime := Floor((A_TickCount - StartTime) /1000)
+MsgBox,  %ElapsedTime% seconds have elapsed.
+ExitApp
