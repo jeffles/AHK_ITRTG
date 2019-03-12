@@ -3,7 +3,7 @@
 SetTitleMatchMode, 2 ;<-- so you can use partial window titles
 Coordmode, Mouse, Screen ;<-- so you can mouse the whole screen
 CoordMode, Pixel, Screen ;<-- pixel id the whole screen
-SetKeyDelay 30,50 ;<-- set up basic key timing
+SetKeyDelay 30,50 ;<-- set up basic key timing .  
 
 ; change the xy or reset and fight to be variables that you move the 
 ; mouse to at the start of execution. (Or just one, and the other is calculated from it)
